@@ -1,0 +1,6 @@
+# Function dependencies, for example:
+# package>=version
+firebase-admin==2.16.0
+scikit-learn==1.0
+numpy>=1.22.2
+
