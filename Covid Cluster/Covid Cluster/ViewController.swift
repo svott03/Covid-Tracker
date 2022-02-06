@@ -24,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         getUserLocation()
         //Iterate through collection
-        db.collection("Locations")
+        db.collection("Parties")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -52,7 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = location1
-                        annotation.title = "Random"
+                        annotation.title = "Party!"
                         self.mapView.addAnnotation(annotation)
                         
 
@@ -91,6 +91,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.mapView.addAnnotation(annotation)
             
             db.collection("Locations").document(deviceID).setData(["Longitude":longitude, "Latitude":latitude])
+            
         }
     }
        
